@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6fdttqwmr3rf"]
+
+[ext_resource type="Texture2D" uid="uid://desuvupmpix5g" path="res://Assets/Enemy_Base.png" id="1_oroch"]
+[ext_resource type="Script" path="res://Scripts/Enemy Scripts/Enemy_Base.cs" id="1_pxngw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12w6p"]
+size = Vector2(45, 30)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_pxngw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(10, 0)
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = ExtResource("1_oroch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_12w6p")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(40, 2.5)

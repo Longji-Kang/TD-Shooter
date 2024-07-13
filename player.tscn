@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://csv6c8xwmgapg"]
+
+[ext_resource type="Script" path="res://Scripts/Player Scripts/Movement.cs" id="1_3rhbo"]
+[ext_resource type="Script" path="res://Scripts/Player Scripts/player.cs" id="1_gy1ou"]
+[ext_resource type="Texture2D" uid="uid://67jvu3g626uy" path="res://Assets/MC.png" id="2_pnfor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ia478"]
+size = Vector2(6, 9)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3rhbo")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -3.27835e-07)
+rotation = 1.5708
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ia478")
+debug_color = Color(0, 0.596078, 0.729412, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2.38419e-07, 0)
+
+[node name="GunLabel" type="Label" parent="Camera2D"]
+offset_left = 442.0
+offset_top = 251.0
+offset_right = 533.0
+offset_bottom = 274.0
+text = "Hello World"
+
+[node name="BulletLabel" type="Label" parent="Camera2D"]
+offset_left = 442.0
+offset_top = 275.0
+offset_right = 569.0
+offset_bottom = 324.0
+text = "Hello Worldsada
+
+"
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("1_gy1ou")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+position = Vector2(10, 0)
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = ExtResource("2_pnfor")
+
+[node name="Muzzle" type="Node2D" parent="Player"]
+position = Vector2(40, 2.5)
+scale = Vector2(5, 5)
+
+[node name="ShotTimer" type="Timer" parent="Player"]
+wait_time = 0.1

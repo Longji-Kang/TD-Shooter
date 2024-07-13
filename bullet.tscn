@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1j06iftg3o6w"]
+
+[ext_resource type="Texture2D" uid="uid://h7neufxrdusj" path="res://Assets/Bullet.png" id="1_31q5b"]
+[ext_resource type="Script" path="res://Scripts/Bullet Scripts/bullet.cs" id="1_o6rsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4i2u"]
+size = Vector2(4, 4)
+
+[node name="Sperm" type="CharacterBody2D"]
+script = ExtResource("1_o6rsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-7, 0)
+rotation = 1.5708
+texture = ExtResource("1_31q5b")
+
+[node name="BulletCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_j4i2u")
